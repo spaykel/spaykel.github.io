@@ -20,7 +20,7 @@ const INFO = {
 	about: {
 		title: "Diligent. Dauntless. Dynamic.",
 		description:
-			"I'm Sammy Paykel, a passionate computer science student currently in my second year at Cal Poly. My love for technology drives me to develop software solutions for problems of any scale, and I am always eager to learn from and collaborate with others. When I'm not busy with school, I love to spend my free time playing piano, listening to jazz music, and hanging out with friends. I am always eager to take on new projects and gain more experience in the software engineering field.",
+			"I'm Sammy Paykel, a passionate computer science student currently in my fourth year at Cal Poly. My love for technology drives me to develop software solutions for problems of any scale, and I am always eager to learn from and collaborate with others. When I'm not busy with school, I love to spend my free time playing piano, listening to jazz music, and hanging out with friends. I am always eager to take on new projects and gain more experience in the software engineering field.",
 	},
 
 	projects: [

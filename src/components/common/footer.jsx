@@ -26,7 +26,7 @@ const Footer = () => {
 
 				<div className="footer-credits">
 					<div className="footer-credits-text">
-						2023 Sammy Paykel. I Don't Know How to Copyright
+						2025 Sammy Paykel. I Don't Know How to Copyright
 					</div>
 				</div>
 			</div>
