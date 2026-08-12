@@ -34,12 +34,12 @@ const INFO = {
 		},
 		
 		{
-			title: "Fraternity Mobile App",
+			title: "Event Finder Mobile App",
 			description:
-				"Collaborated with fraternity brothers to create a custom mobile application, built on a React Native w/ Typescript framework. Github repository below",
+				"Developed What's The Move, a full-stack React Native app powered by Spring Boot and MySQL that delivers real-time, user-reported insights on local events with dynamic location services. Github repository below (backend functions in separate repository)",
 			logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/React-icon.svg/2300px-React-icon.svg.png",
 			linkText: "View Project",
-			link: "https://github.com/sigma-phi-delta-beta-nu/sigma-phi-delta-mobile-app",
+			link: "https://github.com/spaykel/expowtm",
 		},
 
 		{
