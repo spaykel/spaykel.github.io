@@ -134,9 +134,44 @@ img {
 }
 
 .brand {
+  position: relative;
+  width: 46px;
+  height: 46px;
+  justify-content: center;
+  border: 1px solid var(--line);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.08), transparent 58%),
+    var(--button-bg);
+  color: var(--ink);
   gap: 10px;
-  font-weight: 800;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.18rem;
+  font-weight: 700;
+  line-height: 1;
   letter-spacing: 0;
+  transition:
+    transform 160ms ease,
+    border-color 160ms ease,
+    background-color 160ms ease;
+}
+
+.brand::after {
+  position: absolute;
+  right: 5px;
+  bottom: 5px;
+  width: 11px;
+  height: 11px;
+  border-right: 2px solid var(--rust);
+  border-bottom: 2px solid var(--rust);
+  content: "";
+}
+
+.brand:hover {
+  transform: translateY(-1px);
+  border-color: var(--accent-border);
+  background:
+    linear-gradient(135deg, rgba(15, 118, 110, 0.12), transparent 58%),
+    var(--button-hover-bg);
 }
 
 .nav-links,
