@@ -20,19 +20,6 @@ export const navigation = [
 
 export const experience = [
   {
-    company: 'Lockheed Martin',
-    role: 'Strategic Operations Analyst',
-    period: 'August 2026 - Present',
-    type: 'Full-time',
-    summary:
-      'Developing simulation models, analysis tooling, and software workflows that support advanced defense system evaluation and operational decision making.',
-    highlights: [
-      'Developed object-oriented AFSIM software models for mission, theater, and campaign-level simulations.',
-      'Designed, integrated, tested, and debugged simulation software to evaluate advanced defense system performance.',
-      'Built software tools to analyze complex simulation data and support operational decision making.',
-    ],
-  },
-  {
     company: 'General Atomics Aeronautical Systems',
     role: 'Data Engineering Intern',
     period: 'June 2025 - August 2025',

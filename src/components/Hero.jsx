@@ -11,7 +11,7 @@ export default function Hero() {
   return (
     <section className="hero shell section" id="top" aria-labelledby="hero-title">
       <div className="hero-copy">
-        <p className="eyebrow">Software • Data • Strategy</p>
+        <p className="eyebrow">Software / Data / Strategy</p>
         <h1 id="hero-title">{profile.name}</h1>
         <p className="hero-lede">{profile.headline}</p>
         <div className="hero-actions" aria-label="Primary links">
@@ -25,9 +25,9 @@ export default function Hero() {
 
       <aside className="hero-panel" aria-label="Professional highlights">
         <div>
-          <span className="panel-label">Current</span>
-          <strong>Strategic Operations Analyst</strong>
-          <p>Lockheed Martin</p>
+          <span className="panel-label">Experience</span>
+          <strong>Data engineering and full-stack software</strong>
+          <p>Technical work across aerospace and renewable energy contexts.</p>
         </div>
         <div>
           <span className="panel-label">Foundation</span>
