@@ -10,9 +10,14 @@
   --blue: #274c77;
   --rust: #a35f37;
   --shadow: 0 24px 70px rgba(23, 32, 29, 0.08);
-  --body-bg:
-    linear-gradient(90deg, rgba(23, 32, 29, 0.035) 1px, transparent 1px) 0 0 / 80px 80px,
-    linear-gradient(180deg, #fffdf8 0%, #f8f6ef 48%, #fffdf8 100%);
+  --cursor-x: 50vw;
+  --cursor-y: 50vh;
+  --grid-shift-x: 0px;
+  --grid-shift-y: 0px;
+  --body-bg: linear-gradient(180deg, #fffdf8 0%, #f8f6ef 48%, #fffdf8 100%);
+  --grid-line: rgba(23, 32, 29, 0.035);
+  --cursor-glow: rgba(15, 118, 110, 0.12);
+  --cursor-ring: rgba(39, 76, 119, 0.08);
   --header-bg: rgba(255, 253, 248, 0.88);
   --button-bg: rgba(255, 255, 255, 0.55);
   --button-hover-bg: #ffffff;
@@ -44,9 +49,10 @@
   --blue: #9bbde7;
   --rust: #e0a078;
   --shadow: 0 24px 70px rgba(0, 0, 0, 0.28);
-  --body-bg:
-    linear-gradient(90deg, rgba(238, 243, 236, 0.045) 1px, transparent 1px) 0 0 / 80px 80px,
-    linear-gradient(180deg, #0d1210 0%, #151a18 48%, #0f1412 100%);
+  --body-bg: linear-gradient(180deg, #0d1210 0%, #151a18 48%, #0f1412 100%);
+  --grid-line: rgba(238, 243, 236, 0.045);
+  --cursor-glow: rgba(84, 214, 200, 0.12);
+  --cursor-ring: rgba(155, 189, 231, 0.08);
   --header-bg: rgba(15, 20, 18, 0.88);
   --button-bg: rgba(238, 243, 236, 0.055);
   --button-hover-bg: rgba(238, 243, 236, 0.1);
@@ -82,6 +88,55 @@ body {
     color 180ms ease;
 }
 
+body::selection {
+  background: rgba(15, 118, 110, 0.2);
+}
+
+.cursor-field {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.cursor-field::before,
+.cursor-field::after {
+  position: absolute;
+  content: "";
+  pointer-events: none;
+}
+
+.cursor-field::before {
+  inset: -80px;
+  background:
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px),
+    linear-gradient(180deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 80px 80px;
+  transform: translate3d(var(--grid-shift-x), var(--grid-shift-y), 0);
+  transition: opacity 180ms ease;
+}
+
+.cursor-field::after {
+  inset: 0;
+  background:
+    radial-gradient(
+      360px circle at var(--cursor-x) var(--cursor-y),
+      var(--cursor-glow),
+      transparent 62%
+    ),
+    radial-gradient(
+      620px circle at var(--cursor-x) var(--cursor-y),
+      var(--cursor-ring),
+      transparent 68%
+    );
+  mix-blend-mode: multiply;
+}
+
+[data-theme="dark"] .cursor-field::after {
+  mix-blend-mode: screen;
+}
+
 a {
   color: inherit;
   text-decoration: none;
@@ -113,6 +168,12 @@ img {
   border-bottom: 1px solid rgba(221, 216, 206, 0.82);
   background: var(--header-bg);
   backdrop-filter: blur(18px);
+}
+
+main,
+.footer {
+  position: relative;
+  z-index: 1;
 }
 
 .nav {
@@ -750,6 +811,14 @@ h3 {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  .cursor-field::before {
+    transform: none;
+  }
+
+  .cursor-field::after {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {
